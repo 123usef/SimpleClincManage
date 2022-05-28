@@ -1,0 +1,21 @@
+﻿
+@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+@using Microsoft.AspNetCore.Identity;
+@inject SignInManager<IdentityUser> SignInManager
+
+
+<div class=" text-center mt-10">
+    @if (SignInManager.IsSignedIn(User))
+    {
+        <h1 class="display-4">Welcome Manager   </h1>   
+        <a asp-page="/Admin/Patient" class="btn btn-info"> admin panal</a>
+    }
+    else{
+       <h1 > welcome to HOSPOGate managment system </h1>
+    <h2> please Login to start clinc Mangment .</h2>
+    }
+</div>
